@@ -1,11 +1,6 @@
 package io.zipcoder.persistenceapp.models;
 
-import com.sun.tools.javac.jvm.Gen;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Department {
@@ -13,6 +8,7 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long department_id;
     private String name;
+    @OneToOne
     private Employee manager;
 
     public Department() {

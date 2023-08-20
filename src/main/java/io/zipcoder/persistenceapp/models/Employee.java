@@ -1,9 +1,6 @@
 package io.zipcoder.persistenceapp.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -19,6 +16,7 @@ public class Employee {
     private String phoneNumber;
     private String email;
     private Date hireDate;
+    @OneToOne
     private Employee manager;
     private Long department_id;
 
